@@ -7,8 +7,8 @@
   <meta name="description" content="Shop the official X-Labs catalogue with live PepShop pricing and secure PayFast checkout.">
   <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://www.xlabs.ltd/">
-  <link rel="icon" href="./xlabs-logo-v2.jpg">
-  <link rel="stylesheet" href="./styles.css?v=20260922-hero2">
+  <link rel="icon" href="./xlabs-logo.jpg">
+  <link rel="stylesheet" href="./styles.css?v=20260922-hero3">
   <script>
     (function () {
       var canonicalHost = 'www.xlabs.ltd';
@@ -26,7 +26,7 @@
 
   <header class="site-header">
     <a class="brand" href="#shop" aria-label="X-Labs home">
-      <img src="./xlabs-logo-v2.jpg" alt="X-Labs">
+      <img src="./xlabs-logo.jpg" alt="X-Labs">
       <div>
         <strong>X-LABS</strong>
         <small>PRECISION PEPTIDES. PREMIUM PERFORMANCE.</small>
@@ -66,8 +66,61 @@
       </div>
       <div class="hero-art">
         <div class="hero-logo-frame">
-          <img src="./xlabs-logo-v2.jpg" alt="X-Labs Precision Peptides. Premium Performance.">
+          <img src="./xlabs-logo.jpg" alt="X-Labs Precision Peptides. Premium Performance.">
         </div>
+
+        <svg class="peptide-strand" viewBox="0 0 260 620" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="helixLineA" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#12d9e7" stop-opacity="0.18"/>
+              <stop offset="50%" stop-color="#54f3ff" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#12d9e7" stop-opacity="0.12"/>
+            </linearGradient>
+            <linearGradient id="helixLineB" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#12d9e7" stop-opacity="0.10"/>
+              <stop offset="50%" stop-color="#9df9ff" stop-opacity="0.62"/>
+              <stop offset="100%" stop-color="#12d9e7" stop-opacity="0.16"/>
+            </linearGradient>
+            <radialGradient id="nodeGlow">
+              <stop offset="0%" stop-color="#d8fdff"/>
+              <stop offset="28%" stop-color="#70f6ff"/>
+              <stop offset="68%" stop-color="#13b9c6"/>
+              <stop offset="100%" stop-color="#04606a"/>
+            </radialGradient>
+            <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <path class="helix-back" d="M62 10 C220 90 220 180 62 255 C-8 290 -8 360 62 402 C220 492 220 548 62 612"
+                fill="none" stroke="url(#helixLineB)" stroke-width="13" stroke-linecap="round"/>
+          <path class="helix-front" d="M198 10 C40 90 40 180 198 255 C268 290 268 360 198 402 C40 492 40 548 198 612"
+                fill="none" stroke="url(#helixLineA)" stroke-width="15" stroke-linecap="round" filter="url(#softGlow)"/>
+
+          <g class="helix-rungs" stroke-linecap="round">
+            <line x1="78" y1="66" x2="182" y2="66"/>
+            <line x1="55" y1="134" x2="205" y2="134"/>
+            <line x1="83" y1="205" x2="177" y2="205"/>
+            <line x1="92" y1="278" x2="168" y2="278"/>
+            <line x1="55" y1="349" x2="205" y2="349"/>
+            <line x1="82" y1="424" x2="178" y2="424"/>
+            <line x1="58" y1="496" x2="202" y2="496"/>
+            <line x1="84" y1="565" x2="176" y2="565"/>
+          </g>
+
+          <g class="helix-nodes" filter="url(#softGlow)">
+            <circle cx="78" cy="66" r="10"/><circle cx="182" cy="66" r="10"/>
+            <circle cx="55" cy="134" r="13"/><circle cx="205" cy="134" r="13"/>
+            <circle cx="83" cy="205" r="9"/><circle cx="177" cy="205" r="9"/>
+            <circle cx="92" cy="278" r="12"/><circle cx="168" cy="278" r="12"/>
+            <circle cx="55" cy="349" r="14"/><circle cx="205" cy="349" r="14"/>
+            <circle cx="82" cy="424" r="10"/><circle cx="178" cy="424" r="10"/>
+            <circle cx="58" cy="496" r="12"/><circle cx="202" cy="496" r="12"/>
+            <circle cx="84" cy="565" r="9"/><circle cx="176" cy="565" r="9"/>
+          </g>
+        </svg>
+
         <div class="hero-art-caption">
           <span class="micro-x">X</span>
           <span>RESEARCH · PERFORMANCE · POSSIBILITIES</span>
@@ -78,7 +131,7 @@
     <section class="shop-section" id="shop">
       <div class="section-heading">
         <div class="section-brand-heading">
-          <img class="section-brand-mark" src="./xlabs-logo-v2.jpg" alt="" aria-hidden="true">
+          <img class="section-brand-mark" src="./xlabs-logo.jpg" alt="" aria-hidden="true">
           <div>
             <p class="eyebrow">LIVE CATALOGUE</p>
             <h2>Shop X-Labs</h2>
@@ -102,7 +155,7 @@
 
     <section class="about-section" id="about">
       <div class="about-brand-heading">
-        <img class="section-brand-mark" src="./xlabs-logo-v2.jpg" alt="" aria-hidden="true">
+        <img class="section-brand-mark" src="./xlabs-logo.jpg" alt="" aria-hidden="true">
         <div>
           <p class="eyebrow">WHY X-LABS</p>
           <h2>One controlled X-Labs catalogue.</h2>
@@ -123,7 +176,7 @@
 
   <footer>
     <div class="footer-brand">
-      <img src="./xlabs-logo-v2.jpg" alt="X-Labs">
+      <img src="./xlabs-logo.jpg" alt="X-Labs">
       <div><strong>X-LABS</strong><span>Precision Peptides. Premium Performance.</span></div>
     </div>
     <div><a href="https://www.pepshop.co.za/" rel="noopener">PepShop</a><span>Catalogue & secure checkout infrastructure powered by PepShop.</span></div>
@@ -224,6 +277,6 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20260922-hero2"></script>
+  <script src="./app.js?v=20260922-hero3"></script>
 </body>
 </html>
