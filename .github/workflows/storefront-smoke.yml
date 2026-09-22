@@ -34,11 +34,9 @@ jobs:
           const fs = require('fs');
           const payload = JSON.parse(fs.readFileSync('/tmp/products.json', 'utf8'));
           if (!Array.isArray(payload.products)) throw new Error('PepShop product feed is missing products.');
-          const normalize = value => String(value || '').toLowerCase().replace(/\s+/g, '');
-          const xlabs = payload.products.filter(product => {
-            const haystack = [product.supplier, product.brand, product.name, product.id].map(normalize).join('|');
-            return haystack.includes('xlabs') || haystack.includes('x-labs');
-          });
+          const xlabs = payload.products.filter(product =>
+            String(product.supplier || 'realfit').trim().toLowerCase() === 'xlabs'
+          );
           if (!xlabs.length) throw new Error('No X-Labs products were returned by the live PepShop catalogue.');
           const priced = xlabs.filter(product => Number(product.price || 0) > 0 && !product.priceLocked);
           if (!priced.length) throw new Error('The live X-Labs catalogue returned no retail-priced products.');
