@@ -38,7 +38,7 @@
     return API + (value.charAt(0) === '/' ? value : '/' + value);
   }
   function isXlabs(product) {
-    return String(product.supplier || 'realfit').trim().toLowerCase() === 'xlabs';
+    return String(product.supplier || '').trim().toLowerCase() === 'xlabs';
   }
   function codeFor(product) {
     var text = String(product.id || '') + ' ' + String(product.name || '');
@@ -85,7 +85,7 @@
     if (state.token) opts.headers.Authorization = 'Bearer ' + state.token;
     var response = await fetch(API + path, opts);
     var data = await response.json().catch(function () { return {}; });
-    if (!response.ok) throw new Error(data.error || 'The secure PepShop service could not complete this request.');
+    if (!response.ok) throw new Error(data.error || 'The secure X-Labs service could not complete this request.');
     return data;
   }
 
@@ -96,8 +96,8 @@
       if (!response.ok) throw new Error('Live catalogue unavailable.');
       var payload = await response.json();
       state.products = (payload.products || []).filter(isXlabs).filter(function (p) { return p.active !== false; });
-      if (!state.products.length) throw new Error('No active X-Labs listings were returned by PepShop.');
-      $('catalogueStatus').textContent = state.products.length + ' live X-Labs listings · prices synced from PepShop';
+      if (!state.products.length) throw new Error('No active X-Labs listings are available right now.');
+      $('catalogueStatus').textContent = state.products.length + ' live X-Labs listings · current retail pricing';
       showMessage($('catalogueError'), '');
       buildCategories();
       refreshCartPricing();
@@ -106,7 +106,7 @@
     } catch (error) {
       $('productGrid').innerHTML = '';
       $('catalogueStatus').textContent = 'Catalogue temporarily unavailable';
-      showMessage($('catalogueError'), error.message + ' Please use PepShop while the live feed reconnects.', 'error');
+      showMessage($('catalogueError'), error.message + ' Please try again shortly.', 'error');
       return false;
     }
   }
@@ -312,7 +312,7 @@
     var code = new FormData(form).get('code');
     var path = kind === 'login' ? '/api/member/login/verify' : '/api/member/register/verify';
     var result = await api(path, { method: 'POST', body: JSON.stringify({ challengeId: challenge, code: code }) });
-    if (!result.accessToken) throw new Error('The X-Labs secure checkout bridge is not active yet. Please use PepShop checkout and try again shortly.');
+    if (!result.accessToken) throw new Error('X-Labs secure checkout is temporarily unavailable. Please try again shortly.');
     persistMember(result.member, result.accessToken);
     closeModals();
     if (state.cart.length) openCheckout();
@@ -331,7 +331,7 @@
     f.postalCode.value = m.postalCode || '';
     f.province.value = m.province || '';
     f.country.value = m.country || 'South Africa';
-    $('checkoutMember').textContent = 'Verified member: ' + ([m.firstName, m.surname].filter(Boolean).join(' ') || m.email || 'PepShop member');
+    $('checkoutMember').textContent = 'Verified member: ' + ([m.firstName, m.surname].filter(Boolean).join(' ') || m.email || 'X-Labs member');
   }
   function openCheckout() {
     closeCart();
@@ -365,7 +365,7 @@
         method: 'POST',
         body: JSON.stringify({ customer: customer, items: items, notes: form.notes || '' })
       });
-      if (!result.payfastReady || !result.paymentUrl) throw new Error('The order was received but secure PayFast checkout was not returned. Please contact PepShop support before paying.');
+      if (!result.payfastReady || !result.paymentUrl) throw new Error('The order was received but secure PayFast checkout was not returned. Please contact X-Labs support before paying.');
       state.cart = []; saveCart();
       window.location.assign(/^https?:\/\//i.test(result.paymentUrl) ? result.paymentUrl : API + result.paymentUrl);
     } catch (error) {
