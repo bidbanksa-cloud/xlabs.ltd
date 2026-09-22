@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>X-Labs | Precision Peptides. Premium Performance.</title>
-  <meta name="description" content="X-Labs — Precision Peptides. Premium Performance.">
-  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Shop the official X-Labs catalogue with live PepShop pricing and secure PayFast checkout.">
+  <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://www.xlabs.ltd/">
+  <link rel="icon" href="./xlabs-logo-v2.jpg">
+  <link rel="stylesheet" href="./styles.css?v=20260922-1">
   <script>
     (function () {
       var canonicalHost = 'www.xlabs.ltd';
@@ -15,47 +17,190 @@
       }
     }());
   </script>
-  <style>
-    :root{color-scheme:dark}
-    *{box-sizing:border-box}
-    html,body{margin:0;width:100%;min-height:100%;background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif}
-    body{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:clamp(16px,3vw,34px);overflow-x:hidden}
-    .wrap{width:min(100%,1120px);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .logo-shell{width:min(92vw,980px);display:flex;align-items:center;justify-content:center}
-    .logo{display:block;width:100%;height:auto;max-height:78svh;object-fit:contain;margin:0 auto;image-rendering:auto;filter:drop-shadow(0 0 22px rgba(24,218,232,.14))}
-    .shop{display:inline-block;margin-top:clamp(12px,2vw,22px);color:#18dbe8;text-decoration:none;font-weight:700;font-size:clamp(.95rem,1.9vw,1.28rem);letter-spacing:.22em;text-transform:uppercase;padding:8px 2px 10px;border-bottom:1px solid rgba(24,219,232,.45);transition:color .2s,border-color .2s,text-shadow .2s}
-    .shop:hover,.shop:focus-visible{color:#8ff7ff;border-color:#8ff7ff;text-shadow:0 0 16px rgba(24,219,232,.35);outline:none}
-    @media(max-width:700px){
-      body{padding:14px 10px}
-      .wrap{width:100%}
-      .logo-shell{width:96vw}
-      .logo{max-height:74svh}
-      .shop{margin-top:12px;font-size:clamp(.82rem,4vw,1rem);letter-spacing:.13em}
-    }
-    @media(max-height:620px) and (orientation:landscape){
-      body{padding:8px}
-      .logo-shell{width:min(74vw,860px)}
-      .logo{max-height:78vh}
-      .shop{margin-top:7px}
-    }
-  </style>
 </head>
 <body>
-  <main class="wrap">
-    <div class="logo-shell">
-      <img
-        class="logo"
-        src="https://www.pepshop.co.za/assets/xlabs-supplier-logo.jpeg?v=20260902"
-        alt="X-Labs — Precision Peptides. Premium Performance."
-        width="1448"
-        height="1086"
-        decoding="async"
-        fetchpriority="high"
-        referrerpolicy="no-referrer"
-        onerror="this.onerror=null;this.src='./xlabs-logo-v2.jpg?v=20260902'"
-      >
-    </div>
-    <a class="shop" href="https://www.pepshop.co.za/" rel="noopener">WWW.PEPSHOP.CO.ZA</a>
+  <div class="topline">
+    <span>OFFICIAL X-LABS ONLINE STORE</span>
+    <span class="live-dot"><i></i> LIVE PRICING FROM PEPSHOP</span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#shop" aria-label="X-Labs home">
+      <img src="./xlabs-logo-v2.jpg" alt="X-Labs">
+      <div>
+        <strong>X-LABS</strong>
+        <small>PRECISION PEPTIDES. PREMIUM PERFORMANCE.</small>
+      </div>
+    </a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <button id="accountButton" class="ghost-button" type="button">Member</button>
+      <button id="cartButton" class="cart-button" type="button">Cart <span id="cartCount">0</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">X-LABS DIRECT</p>
+        <h1>Precision research products.<br><span>One dedicated store.</span></h1>
+        <p class="hero-text">The complete X-Labs catalogue, synced directly from PepShop so products, availability and retail pricing stay aligned automatically.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#shop">Shop X-Labs</a>
+          <button class="secondary-button" id="heroAccountButton" type="button">Sign in / Register</button>
+        </div>
+        <div class="trust-row">
+          <span>Live PepShop catalogue</span>
+          <span>Secure PayFast checkout</span>
+          <span>SA courier delivery</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="./xlabs-logo-v2.jpg" alt="X-Labs Precision Peptides">
+      </div>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LIVE CATALOGUE</p>
+          <h2>Shop X-Labs</h2>
+          <p id="catalogueStatus">Loading the current PepShop X-Labs catalogue…</p>
+        </div>
+        <div class="catalogue-tools">
+          <label class="search-box">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Retatrutide, GHK-Cu, BPC-157…" autocomplete="off">
+          </label>
+          <label class="filter-box">
+            <span>Category</span>
+            <select id="categoryFilter"><option value="">All categories</option></select>
+          </label>
+        </div>
+      </div>
+      <div id="catalogueError" class="notice error hidden"></div>
+      <div id="productGrid" class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div>
+        <p class="eyebrow">WHY X-LABS</p>
+        <h2>One controlled X-Labs catalogue.</h2>
+      </div>
+      <div class="about-grid">
+        <article><strong>Single source of pricing</strong><p>This storefront reads the same public retail catalogue that powers PepShop, helping prevent price drift between sites.</p></article>
+        <article><strong>Secure checkout</strong><p>Verified member checkout and payment continue through PepShop's existing protected order engine and PayFast integration.</p></article>
+        <article><strong>X-Labs only</strong><p>No competing brands or unrelated products. The catalogue is automatically filtered to X-Labs listings.</p></article>
+      </div>
+    </section>
+
+    <section class="research-note">
+      <strong>Research notice</strong>
+      <p>X-Labs peptide listings are presented for research purposes. Product-specific research notices and catalogue information remain authoritative on each live listing.</p>
+    </section>
   </main>
+
+  <footer>
+    <div><strong>X-LABS</strong><span>Precision Peptides. Premium Performance.</span></div>
+    <div><a href="https://www.pepshop.co.za/" rel="noopener">PepShop</a><span>Catalogue & secure checkout infrastructure powered by PepShop.</span></div>
+  </footer>
+
+  <div id="overlay" class="overlay hidden"></div>
+
+  <aside id="cartDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-head">
+      <div><p class="eyebrow">YOUR ORDER</p><h2>Cart</h2></div>
+      <button class="icon-button" data-close-cart type="button" aria-label="Close cart">×</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-summary">
+      <div><span>Subtotal</span><strong id="cartSubtotal">R0</strong></div>
+      <small>Delivery is calculated by the PepShop checkout engine.</small>
+      <button id="checkoutButton" class="primary-button full" type="button">Checkout & Pay with PayFast</button>
+    </div>
+  </aside>
+
+  <div id="productModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <button class="icon-button modal-close" data-close-modal type="button" aria-label="Close product details">×</button>
+    <div id="productModalContent"></div>
+  </div>
+
+  <div id="memberModal" class="modal member-modal hidden" role="dialog" aria-modal="true" aria-labelledby="memberModalTitle">
+    <button class="icon-button modal-close" data-close-modal type="button" aria-label="Close member access">×</button>
+    <div class="modal-pad">
+      <p class="eyebrow">SECURE MEMBER ACCESS</p>
+      <h2 id="memberModalTitle">Sign in or register</h2>
+      <p class="muted">X-Labs uses your verified PepShop membership for secure checkout. Your X-Labs cart stays here while you verify.</p>
+      <div class="tabs">
+        <button id="loginTab" class="active" type="button">Sign in</button>
+        <button id="registerTab" type="button">Register</button>
+      </div>
+      <div id="memberMessage" class="notice hidden"></div>
+      <section id="loginPanel">
+        <form id="loginRequestForm" class="stack-form">
+          <label>Cell / WhatsApp<input name="phone" required autocomplete="tel"></label>
+          <label>Email address<input name="email" type="email" required autocomplete="email"></label>
+          <button class="primary-button full" type="submit">Email My Login Code</button>
+        </form>
+        <form id="loginVerifyForm" class="stack-form hidden">
+          <label>6-digit login code<input name="code" required inputmode="numeric" maxlength="6" pattern="[0-9]{6}" autocomplete="one-time-code"></label>
+          <button class="primary-button full" type="submit">Verify & Sign In</button>
+          <button class="text-button" data-reset-auth type="button">Use different details</button>
+        </form>
+      </section>
+      <section id="registerPanel" class="hidden">
+        <form id="registerRequestForm" class="stack-form">
+          <div class="two">
+            <label>First name<input name="firstName" required autocomplete="given-name"></label>
+            <label>Surname<input name="surname" required autocomplete="family-name"></label>
+          </div>
+          <label>Cell / WhatsApp<input name="phone" required autocomplete="tel"></label>
+          <label>Email address<input name="email" type="email" required autocomplete="email"></label>
+          <label class="check"><input name="marketingConsent" type="checkbox" value="true"> <span>I agree to receive PepShop and RealFit product information and specials. I can opt out later.</span></label>
+          <button class="primary-button full" type="submit">Email My Verification Code</button>
+        </form>
+        <form id="registerVerifyForm" class="stack-form hidden">
+          <label>6-digit verification code<input name="code" required inputmode="numeric" maxlength="6" pattern="[0-9]{6}" autocomplete="one-time-code"></label>
+          <button class="primary-button full" type="submit">Verify & Activate Membership</button>
+          <button class="text-button" data-reset-auth type="button">Use different details</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <div id="checkoutModal" class="modal checkout-modal hidden" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle">
+    <button class="icon-button modal-close" data-close-modal type="button" aria-label="Close checkout">×</button>
+    <div class="modal-pad">
+      <p class="eyebrow">SECURE CHECKOUT</p>
+      <h2 id="checkoutModalTitle">Delivery details</h2>
+      <p id="checkoutMember" class="muted"></p>
+      <div id="checkoutMessage" class="notice hidden"></div>
+      <form id="checkoutForm" class="stack-form">
+        <div class="two">
+          <label>First name<input name="firstName" required autocomplete="given-name"></label>
+          <label>Surname<input name="surname" required autocomplete="family-name"></label>
+        </div>
+        <div class="two">
+          <label>Cell number<input name="phone" required autocomplete="tel"></label>
+          <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        </div>
+        <div class="two">
+          <label>Gender<select name="gender" required><option value="">Select</option><option>Male</option><option>Female</option></select></label>
+          <label>Country<input name="country" required value="South Africa"></label>
+        </div>
+        <label>Physical / street address<textarea name="streetAddress" required rows="3"></textarea></label>
+        <div class="two">
+          <label>City / town<input name="city" required></label>
+          <label>Postal / street code<input name="postalCode" required inputmode="numeric"></label>
+        </div>
+        <label>Province<input name="province" required placeholder="e.g. Gauteng"></label>
+        <label>Order notes<textarea name="notes" rows="2" placeholder="Optional"></textarea></label>
+        <button id="placeOrderButton" class="primary-button full" type="submit">Place Order & Open PayFast</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="./app.js?v=20260922-1"></script>
 </body>
 </html>
