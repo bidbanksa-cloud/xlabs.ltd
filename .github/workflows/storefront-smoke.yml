@@ -1,0 +1,49 @@
+name: X-Labs Storefront Smoke Test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'app.js'
+      - 'styles.css'
+      - '.github/workflows/storefront-smoke.yml'
+  workflow_dispatch:
+
+jobs:
+  storefront-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate storefront JavaScript
+        run: node --check app.js
+      - name: Verify live PepShop X-Labs catalogue feed
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsS -H 'Origin: https://www.xlabs.ltd' \
+            -D /tmp/headers.txt \
+            https://www.pepshop.co.za/api/products \
+            -o /tmp/products.json
+          grep -qi '^access-control-allow-origin:' /tmp/headers.txt
+          node - <<'NODE'
+          const fs = require('fs');
+          const payload = JSON.parse(fs.readFileSync('/tmp/products.json', 'utf8'));
+          if (!Array.isArray(payload.products)) throw new Error('PepShop product feed is missing products.');
+          const normalize = value => String(value || '').toLowerCase().replace(/\s+/g, '');
+          const xlabs = payload.products.filter(product => {
+            const haystack = [product.supplier, product.brand, product.name, product.id].map(normalize).join('|');
+            return haystack.includes('xlabs') || haystack.includes('x-labs');
+          });
+          if (!xlabs.length) throw new Error('No X-Labs products were returned by the live PepShop catalogue.');
+          const priced = xlabs.filter(product => Number(product.price || 0) > 0 && !product.priceLocked);
+          if (!priced.length) throw new Error('The live X-Labs catalogue returned no retail-priced products.');
+          console.log('Live X-Labs products:', xlabs.length);
+          for (const product of xlabs) {
+            console.log([product.id, product.name, 'R' + Number(product.price || 0), product.priceLocked ? 'LOCKED' : 'ACTIVE'].join(' | '));
+          }
+          NODE
