@@ -46,3 +46,291 @@ footer{display:flex;justify-content:space-between;gap:25px;padding:32px max(22px
 @media(max-width:1120px){.product-grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr .8fr}.about-section{grid-template-columns:1fr}.about-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:820px){.topline{font-size:9px}.topline span:first-child{display:none}.site-header{padding:11px 14px}.brand div{display:none}.brand img{width:48px;height:38px}nav>a{display:none}.hero{grid-template-columns:1fr;min-height:auto;padding:55px 20px}.hero-art{min-height:300px}.section-heading{align-items:stretch;flex-direction:column}.catalogue-tools{min-width:0;width:100%}.product-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr}.product-modal-grid{grid-template-columns:1fr}.product-modal-grid .modal-image{min-height:260px;max-height:340px}.product-modal-copy{padding:24px}.research-note,footer{flex-direction:column}.research-note strong{min-width:0}}
 @media(max-width:540px){.hero h1{font-size:45px}.hero-text{font-size:15px}.hero-art{min-height:220px}.shop-section{padding:52px 13px 60px}.catalogue-tools{grid-template-columns:1fr}.product-grid{grid-template-columns:1fr 1fr;gap:9px}.product-body{padding:12px}.product-card h3{font-size:14px}.product-card p{display:none}.product-meta{font-size:8px}.price{font-size:18px}.product-bottom{align-items:stretch;flex-direction:column}.card-actions{display:grid;grid-template-columns:1fr 1fr}.card-actions button{padding:9px 5px;font-size:10px}.modal-pad{padding:24px 18px}.two{grid-template-columns:1fr}.site-header nav{gap:6px}.ghost-button,.cart-button{padding:8px 10px;font-size:11px}}
+
+
+/* X-Labs flagship hero refinement — 2026-09-22 */
+.site-header{
+  min-height:82px;
+  background:linear-gradient(180deg,rgba(5,5,5,.97),rgba(5,5,5,.91));
+}
+.brand{gap:14px}
+.brand img{
+  width:76px;
+  height:54px;
+  object-fit:contain;
+  object-position:center;
+  border-radius:10px;
+  box-shadow:0 0 24px rgba(25,219,232,.08);
+}
+.brand strong{font-size:19px;letter-spacing:.16em}
+.brand small{font-size:9px;letter-spacing:.105em}
+
+.hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  min-height:610px;
+  grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr);
+  gap:54px;
+  padding:68px max(26px,6.2vw) 72px;
+  background:
+    radial-gradient(circle at 71% 48%,rgba(25,219,232,.11),transparent 27%),
+    radial-gradient(circle at 90% 78%,rgba(7,83,89,.20),transparent 34%),
+    linear-gradient(105deg,#040708 0%,#051012 44%,#031013 72%,#030607 100%);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  z-index:-2;
+  width:520px;
+  height:520px;
+  right:-115px;
+  top:110px;
+  border-radius:50%;
+  opacity:.28;
+  background:
+    radial-gradient(circle at 50% 8%,rgba(62,242,255,.55) 0 4px,transparent 5px),
+    radial-gradient(circle at 50% 28%,rgba(62,242,255,.34) 0 7px,transparent 8px),
+    radial-gradient(circle at 50% 50%,rgba(62,242,255,.5) 0 9px,transparent 10px),
+    radial-gradient(circle at 50% 73%,rgba(62,242,255,.34) 0 7px,transparent 8px),
+    radial-gradient(circle at 50% 93%,rgba(62,242,255,.55) 0 4px,transparent 5px);
+  filter:blur(.2px);
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:auto -10% -38% 28%;
+  height:70%;
+  background:radial-gradient(ellipse at center,rgba(22,213,225,.13),transparent 66%);
+  transform:rotate(-8deg);
+}
+.hero-atmosphere{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.56;
+  background-image:
+    radial-gradient(circle at 12% 82%,rgba(25,219,232,.34) 0 2px,transparent 3px),
+    radial-gradient(circle at 36% 73%,rgba(25,219,232,.18) 0 3px,transparent 4px),
+    radial-gradient(circle at 79% 34%,rgba(25,219,232,.22) 0 2px,transparent 3px),
+    radial-gradient(circle at 87% 68%,rgba(25,219,232,.17) 0 4px,transparent 5px);
+}
+.hero-copy{
+  position:relative;
+  z-index:2;
+  max-width:610px;
+}
+.hero .eyebrow{
+  margin-bottom:16px;
+  font-size:12px;
+  letter-spacing:.22em;
+}
+.hero h1{
+  margin:0 0 22px;
+  font-size:clamp(34px,3.15vw,50px);
+  line-height:1.08;
+  letter-spacing:-.032em;
+  max-width:610px;
+}
+.hero-line{display:block}
+.hero-line-accent{
+  margin-top:4px;
+  color:var(--cyan);
+  text-shadow:0 0 28px rgba(25,219,232,.10);
+}
+.hero-standard{
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+  margin:3px 0 20px;
+  color:#aeb7bb;
+}
+.hero-rule{
+  display:block;
+  width:74px;
+  height:2px;
+  margin-top:10px;
+  background:linear-gradient(90deg,var(--cyan),rgba(25,219,232,.15));
+  box-shadow:0 0 10px rgba(25,219,232,.25);
+}
+.hero-standard p{
+  margin:0;
+  font-size:11px;
+  line-height:1.55;
+  letter-spacing:.21em;
+}
+.hero-text{
+  max-width:580px;
+  color:#aeb8bd;
+  font-size:15px;
+  line-height:1.62;
+}
+.hero-actions{margin:27px 0 23px}
+.hero .primary-button{
+  min-width:168px;
+  gap:18px;
+  background:transparent;
+  color:#fff;
+  border:1px solid var(--cyan);
+  border-radius:999px;
+  box-shadow:inset 0 0 0 1px rgba(25,219,232,.18),0 0 28px rgba(25,219,232,.07);
+}
+.hero .primary-button:hover{
+  background:rgba(25,219,232,.10);
+  color:#fff;
+}
+.hero .secondary-button{
+  min-width:158px;
+  border-radius:999px;
+}
+.hero-art{
+  min-height:440px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+}
+.hero-art:before{
+  width:82%;
+  background:rgba(25,219,232,.09);
+  filter:blur(96px);
+}
+.hero-logo-frame{
+  width:min(100%,670px);
+  display:grid;
+  place-items:center;
+  padding:18px 12px 8px;
+  position:relative;
+}
+.hero-logo-frame:before{
+  content:"";
+  position:absolute;
+  inset:10% 13% 8%;
+  border-radius:40%;
+  background:radial-gradient(circle,rgba(25,219,232,.11),transparent 68%);
+  filter:blur(38px);
+}
+.hero-logo-frame img{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:650px;
+  max-height:455px;
+  object-fit:contain;
+  border-radius:0;
+  box-shadow:none;
+  filter:drop-shadow(0 0 18px rgba(22,218,231,.18));
+}
+.hero-art-caption{
+  width:min(86%,560px);
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:12px;
+  color:#838f95;
+  font-size:9px;
+  letter-spacing:.19em;
+}
+.micro-x{
+  display:grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  border-top:1px solid rgba(25,219,232,.55);
+  border-bottom:1px solid rgba(25,219,232,.55);
+  color:var(--cyan);
+  font-size:14px;
+  font-weight:800;
+}
+
+.section-brand-heading,
+.about-brand-heading{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+.section-brand-mark{
+  flex:0 0 auto;
+  width:86px;
+  height:64px;
+  object-fit:contain;
+  border-radius:10px;
+  opacity:.92;
+  box-shadow:0 0 24px rgba(25,219,232,.06);
+}
+.about-brand-heading .section-brand-mark{width:92px;height:68px}
+.footer-brand{
+  flex-direction:row!important;
+  align-items:center;
+  gap:12px!important;
+}
+.footer-brand img{
+  width:64px;
+  height:46px;
+  object-fit:contain;
+  border-radius:8px;
+}
+.footer-brand>div{display:flex;flex-direction:column;gap:5px}
+
+@media(max-width:1120px){
+  .hero{
+    grid-template-columns:minmax(0,.95fr) minmax(360px,1.05fr);
+    gap:28px;
+    padding-left:4.7vw;
+    padding-right:4.7vw;
+  }
+  .hero h1{font-size:clamp(33px,4.2vw,45px)}
+  .hero-logo-frame{width:min(100%,560px)}
+}
+@media(max-width:820px){
+  .site-header{min-height:68px}
+  .brand img{width:58px;height:44px}
+  .hero{
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:48px 20px 54px;
+  }
+  .hero-copy{max-width:640px}
+  .hero h1{
+    font-size:clamp(32px,8vw,43px);
+    max-width:590px;
+  }
+  .hero-text{font-size:14px}
+  .hero-art{
+    min-height:330px;
+    margin-top:2px;
+  }
+  .hero-logo-frame{
+    width:min(92vw,590px);
+    padding-top:2px;
+  }
+  .hero-art-caption{justify-content:center}
+  .section-brand-heading,.about-brand-heading{align-items:flex-start}
+  .section-brand-mark{width:66px;height:50px}
+}
+@media(max-width:540px){
+  .hero{
+    padding:38px 16px 46px;
+  }
+  .hero h1{
+    font-size:31px;
+    line-height:1.1;
+  }
+  .hero-standard{margin-bottom:17px}
+  .hero-rule{width:48px}
+  .hero-standard p{font-size:9px}
+  .hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .hero .primary-button,.hero .secondary-button{width:100%}
+  .hero-art{min-height:250px}
+  .hero-logo-frame{width:100%}
+  .hero-art-caption{font-size:8px;letter-spacing:.11em}
+  .trust-row span{font-size:9px}
+  .section-brand-mark{display:none}
+  .footer-brand img{width:54px;height:40px}
+}

@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://www.xlabs.ltd/">
   <link rel="icon" href="./xlabs-logo-v2.jpg">
-  <link rel="stylesheet" href="./styles.css?v=20260922-1">
+  <link rel="stylesheet" href="./styles.css?v=20260922-hero2">
   <script>
     (function () {
       var canonicalHost = 'www.xlabs.ltd';
@@ -42,12 +42,20 @@
 
   <main>
     <section class="hero">
+      <div class="hero-atmosphere" aria-hidden="true"></div>
       <div class="hero-copy">
         <p class="eyebrow">X-LABS DIRECT</p>
-        <h1>Precision research products.<br><span>One dedicated store.</span></h1>
+        <h1>
+          <span class="hero-line">Precision research products.</span>
+          <span class="hero-line hero-line-accent">One dedicated store.</span>
+        </h1>
+        <div class="hero-standard" aria-label="Same science. A higher standard.">
+          <span class="hero-rule"></span>
+          <p>SAME SCIENCE.<br>A HIGHER STANDARD.</p>
+        </div>
         <p class="hero-text">The complete X-Labs catalogue, synced directly from PepShop so products, availability and retail pricing stay aligned automatically.</p>
         <div class="hero-actions">
-          <a class="primary-button" href="#shop">Shop X-Labs</a>
+          <a class="primary-button" href="#shop">Shop X-Labs <span aria-hidden="true">→</span></a>
           <button class="secondary-button" id="heroAccountButton" type="button">Sign in / Register</button>
         </div>
         <div class="trust-row">
@@ -57,16 +65,25 @@
         </div>
       </div>
       <div class="hero-art">
-        <img src="./xlabs-logo-v2.jpg" alt="X-Labs Precision Peptides">
+        <div class="hero-logo-frame">
+          <img src="./xlabs-logo-v2.jpg" alt="X-Labs Precision Peptides. Premium Performance.">
+        </div>
+        <div class="hero-art-caption">
+          <span class="micro-x">X</span>
+          <span>RESEARCH · PERFORMANCE · POSSIBILITIES</span>
+        </div>
       </div>
     </section>
 
     <section class="shop-section" id="shop">
       <div class="section-heading">
-        <div>
-          <p class="eyebrow">LIVE CATALOGUE</p>
-          <h2>Shop X-Labs</h2>
-          <p id="catalogueStatus">Loading the current PepShop X-Labs catalogue…</p>
+        <div class="section-brand-heading">
+          <img class="section-brand-mark" src="./xlabs-logo-v2.jpg" alt="" aria-hidden="true">
+          <div>
+            <p class="eyebrow">LIVE CATALOGUE</p>
+            <h2>Shop X-Labs</h2>
+            <p id="catalogueStatus">Loading the current PepShop X-Labs catalogue…</p>
+          </div>
         </div>
         <div class="catalogue-tools">
           <label class="search-box">
@@ -84,9 +101,12 @@
     </section>
 
     <section class="about-section" id="about">
-      <div>
-        <p class="eyebrow">WHY X-LABS</p>
-        <h2>One controlled X-Labs catalogue.</h2>
+      <div class="about-brand-heading">
+        <img class="section-brand-mark" src="./xlabs-logo-v2.jpg" alt="" aria-hidden="true">
+        <div>
+          <p class="eyebrow">WHY X-LABS</p>
+          <h2>One controlled X-Labs catalogue.</h2>
+        </div>
       </div>
       <div class="about-grid">
         <article><strong>Single source of pricing</strong><p>This storefront reads the same public retail catalogue that powers PepShop, helping prevent price drift between sites.</p></article>
@@ -102,7 +122,10 @@
   </main>
 
   <footer>
-    <div><strong>X-LABS</strong><span>Precision Peptides. Premium Performance.</span></div>
+    <div class="footer-brand">
+      <img src="./xlabs-logo-v2.jpg" alt="X-Labs">
+      <div><strong>X-LABS</strong><span>Precision Peptides. Premium Performance.</span></div>
+    </div>
     <div><a href="https://www.pepshop.co.za/" rel="noopener">PepShop</a><span>Catalogue & secure checkout infrastructure powered by PepShop.</span></div>
   </footer>
 
@@ -201,6 +224,6 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20260922-1"></script>
+  <script src="./app.js?v=20260922-hero2"></script>
 </body>
 </html>
