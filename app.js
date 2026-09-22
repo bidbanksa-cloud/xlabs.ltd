@@ -38,9 +38,7 @@
     return API + (value.charAt(0) === '/' ? value : '/' + value);
   }
   function isXlabs(product) {
-    var haystack = [product.supplier, product.brand, product.name, product.id]
-      .map(function (x) { return String(x || '').toLowerCase().replace(/\s+/g, ''); }).join('|');
-    return haystack.indexOf('xlabs') >= 0 || haystack.indexOf('x-labs') >= 0;
+    return String(product.supplier || 'realfit').trim().toLowerCase() === 'xlabs';
   }
   function codeFor(product) {
     var text = String(product.id || '') + ' ' + String(product.name || '');
