@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>X-Labs | Precision Peptides. Premium Performance.</title>
-  <meta name="description" content="Shop the official X-Labs catalogue with live PepShop pricing and secure PayFast checkout.">
+  <meta name="description" content="Shop the official X-Labs catalogue with live pricing and secure PayFast checkout.">
   <meta name="theme-color" content="#050505">
   <link rel="canonical" href="https://www.xlabs.ltd/">
   <link rel="icon" href="./xlabs-logo.jpg">
-  <link rel="stylesheet" href="./styles.css?v=20260922-cleanhero1">
+  <link rel="stylesheet" href="./styles.css?v=20260922-brand1">
   <script>
     (function () {
       var canonicalHost = 'www.xlabs.ltd';
@@ -17,16 +17,27 @@
       }
     }());
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      fetch('./xlabs-logo-clean.b64?v=20260922-brand1', { cache: 'force-cache' })
+        .then(function (response) { if (!response.ok) throw new Error('logo'); return response.text(); })
+        .then(function (base64) {
+          var src = 'data:image/jpeg;base64,' + base64.trim();
+          document.querySelectorAll('[data-xlabs-logo]').forEach(function (img) { img.src = src; });
+        })
+        .catch(function () {});
+    });
+  </script>
 </head>
 <body>
   <div class="topline">
     <span>OFFICIAL X-LABS ONLINE STORE</span>
-    <span class="live-dot"><i></i> LIVE PRICING FROM PEPSHOP</span>
+    <span class="live-dot"><i></i> OFFICIAL X-LABS ONLINE STORE</span>
   </div>
 
   <header class="site-header">
     <a class="brand" href="#shop" aria-label="X-Labs home">
-      <img src="https://www.pepshop.co.za/assets/xlabs-supplier-logo.jpeg" alt="X-Labs">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-xlabs-logo alt="X-Labs">
       <div>
         <strong>X-LABS</strong>
         <small>PRECISION PEPTIDES. PREMIUM PERFORMANCE.</small>
@@ -53,20 +64,20 @@
           <span class="hero-rule"></span>
           <p>SAME SCIENCE.<br>A HIGHER STANDARD.</p>
         </div>
-        <p class="hero-text">The complete X-Labs catalogue, synced directly from PepShop so products, availability and retail pricing stay aligned automatically.</p>
+        <p class="hero-text">The complete X-Labs catalogue with live product availability, current retail pricing and secure online ordering.</p>
         <div class="hero-actions">
           <a class="primary-button" href="#shop">Shop X-Labs <span aria-hidden="true">→</span></a>
           <button class="secondary-button" id="heroAccountButton" type="button">Sign in / Register</button>
         </div>
         <div class="trust-row">
-          <span>Live PepShop catalogue</span>
+          <span>Live X-Labs catalogue</span>
           <span>Secure PayFast checkout</span>
           <span>SA courier delivery</span>
         </div>
       </div>
       <div class="hero-art">
         <div class="hero-logo-frame">
-          <img src="https://www.pepshop.co.za/assets/xlabs-supplier-logo.jpeg" alt="X-Labs Precision Peptides. Premium Performance.">
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-xlabs-logo alt="X-Labs Precision Peptides. Premium Performance.">
         </div>
       </div>
     </section>
@@ -74,11 +85,11 @@
     <section class="shop-section" id="shop">
       <div class="section-heading">
         <div class="section-brand-heading">
-          <img class="section-brand-mark" src="https://www.pepshop.co.za/assets/xlabs-supplier-logo.jpeg" alt="" aria-hidden="true">
+          <img class="section-brand-mark" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-xlabs-logo alt="" aria-hidden="true">
           <div>
             <p class="eyebrow">LIVE CATALOGUE</p>
             <h2>Shop X-Labs</h2>
-            <p id="catalogueStatus">Loading the current PepShop X-Labs catalogue…</p>
+            <p id="catalogueStatus">Loading the current X-Labs catalogue…</p>
           </div>
         </div>
         <div class="catalogue-tools">
@@ -98,15 +109,15 @@
 
     <section class="about-section" id="about">
       <div class="about-brand-heading">
-        <img class="section-brand-mark" src="https://www.pepshop.co.za/assets/xlabs-supplier-logo.jpeg" alt="" aria-hidden="true">
+        <img class="section-brand-mark" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-xlabs-logo alt="" aria-hidden="true">
         <div>
           <p class="eyebrow">WHY X-LABS</p>
           <h2>One controlled X-Labs catalogue.</h2>
         </div>
       </div>
       <div class="about-grid">
-        <article><strong>Single source of pricing</strong><p>This storefront reads the same public retail catalogue that powers PepShop, helping prevent price drift between sites.</p></article>
-        <article><strong>Secure checkout</strong><p>Verified member checkout and payment continue through PepShop's existing protected order engine and PayFast integration.</p></article>
+        <article><strong>Single source of pricing</strong><p>All products and retail pricing are managed from one controlled X-Labs catalogue to keep the store current and consistent.</p></article>
+        <article><strong>Secure checkout</strong><p>Verified X-Labs member checkout is protected and payment is processed securely through PayFast.</p></article>
         <article><strong>X-Labs only</strong><p>No competing brands or unrelated products. The catalogue is automatically filtered to X-Labs listings.</p></article>
       </div>
     </section>
@@ -119,10 +130,10 @@
 
   <footer>
     <div class="footer-brand">
-      <img src="https://www.pepshop.co.za/assets/xlabs-supplier-logo.jpeg" alt="X-Labs">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-xlabs-logo alt="X-Labs">
       <div><strong>X-LABS</strong><span>Precision Peptides. Premium Performance.</span></div>
     </div>
-    <div><a href="https://www.pepshop.co.za/" rel="noopener">PepShop</a><span>Catalogue & secure checkout infrastructure powered by PepShop.</span></div>
+    <div><strong>OFFICIAL X-LABS ONLINE STORE</strong><span>Secure online ordering and PayFast checkout.</span></div>
   </footer>
 
   <div id="overlay" class="overlay hidden"></div>
@@ -135,7 +146,7 @@
     <div id="cartItems" class="cart-items"></div>
     <div class="cart-summary">
       <div><span>Subtotal</span><strong id="cartSubtotal">R0</strong></div>
-      <small>Delivery is calculated by the PepShop checkout engine.</small>
+      <small>Delivery is calculated securely at checkout.</small>
       <button id="checkoutButton" class="primary-button full" type="button">Checkout & Pay with PayFast</button>
     </div>
   </aside>
@@ -150,7 +161,7 @@
     <div class="modal-pad">
       <p class="eyebrow">SECURE MEMBER ACCESS</p>
       <h2 id="memberModalTitle">Sign in or register</h2>
-      <p class="muted">X-Labs uses your verified PepShop membership for secure checkout. Your X-Labs cart stays here while you verify.</p>
+      <p class="muted">Create or verify your X-Labs member profile for secure checkout. Your cart stays here while you verify.</p>
       <div class="tabs">
         <button id="loginTab" class="active" type="button">Sign in</button>
         <button id="registerTab" type="button">Register</button>
@@ -176,7 +187,7 @@
           </div>
           <label>Cell / WhatsApp<input name="phone" required autocomplete="tel"></label>
           <label>Email address<input name="email" type="email" required autocomplete="email"></label>
-          <label class="check"><input name="marketingConsent" type="checkbox" value="true"> <span>I agree to receive PepShop and RealFit product information and specials. I can opt out later.</span></label>
+          <label class="check"><input name="marketingConsent" type="checkbox" value="true"> <span>I agree to receive X-Labs product information, research updates and specials. I can opt out later.</span></label>
           <button class="primary-button full" type="submit">Email My Verification Code</button>
         </form>
         <form id="registerVerifyForm" class="stack-form hidden">
@@ -220,6 +231,6 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20260922-cleanhero1"></script>
+  <script src="./app.js?v=20260922-brand1"></script>
 </body>
 </html>
