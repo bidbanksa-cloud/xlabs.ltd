@@ -25,6 +25,15 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          curl -fsS https://www.pepshop.co.za/api/xlabs-storefront/status -o /tmp/xlabs-status.json
+          node - <<'NODE'
+          const fs = require('fs');
+          const status = JSON.parse(fs.readFileSync('/tmp/xlabs-status.json', 'utf8'));
+          if (status.enabled !== true || status.memberBridge !== 'verified-member-bearer-v1') {
+            throw new Error('PepShop X-Labs storefront bridge is not live yet.');
+          }
+          console.log('PepShop X-Labs storefront bridge: LIVE');
+          NODE
           curl -fsS -H 'Origin: https://www.xlabs.ltd' \
             -D /tmp/headers.txt \
             https://www.pepshop.co.za/api/products \
