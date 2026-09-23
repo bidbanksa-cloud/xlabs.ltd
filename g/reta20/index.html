@@ -4,32 +4,271 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>X-Labs | Retatrutide Reconstitution & Handling Guide</title>
+<meta name="description" content="X-Labs Retatrutide 20 mg reconstitution and handling guide.">
 <meta name="theme-color" content="#050505">
+<link rel="canonical" href="https://www.xlabs.ltd/g/reta20/">
 <style>
-*{box-sizing:border-box}html{background:#050505}body{margin:0;background:#eee;color:#111;font-family:Arial,Helvetica,sans-serif}
-.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;background:#050505;border-bottom:2px solid #f28c28;color:#fff}
-.brand{font-weight:900;letter-spacing:.08em}.brand small{display:block;margin-top:3px;font-size:10px;font-weight:600;letter-spacing:.03em;color:#bbb}
+:root{--ink:#0b0b0b;--muted:#444;--line:#b9b9b9;--paper:#fff;--bg:#ececec;--orange:#f28c28;--blue:#0568d8;--silver:#d7d9dc}
+*{box-sizing:border-box}
+html{background:#050505}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.toolbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px;background:#050505;border-bottom:2px solid var(--orange);color:#fff}
+.toolbar .brand{font-weight:900;letter-spacing:.08em}
+.toolbar .brand small{display:block;margin-top:3px;font-size:10px;font-weight:700;letter-spacing:.04em;color:#cfcfcf}
 .actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.btn{border:1px solid #fff;border-radius:7px;min-height:38px;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;background:#111;color:#fff;text-decoration:none;font-weight:800;font-size:12px;cursor:pointer}
-.btn.primary{background:#f28c28;border-color:#f28c28;color:#050505}
-main{padding:16px 10px 30px}.sheet{max-width:800px;margin:0 auto;background:#fff;box-shadow:0 8px 30px rgba(0,0,0,.18)}
-.sheet img{display:block;width:100%;height:auto}
-@media(max-width:600px){.brand small{display:none}.top{align-items:flex-start}.btn{padding:0 9px;font-size:11px}main{padding:8px 5px 20px}}
-@media print{@page{margin:6mm}.top{display:none!important}body{background:#fff}main{padding:0}.sheet{max-width:none;box-shadow:none}.sheet img{width:100%;max-height:98vh;object-fit:contain}}
+.btn{appearance:none;border:1px solid #fff;border-radius:7px;min-height:38px;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;background:#111;color:#fff;text-decoration:none;font-weight:800;font-size:12px;cursor:pointer;white-space:nowrap}
+.btn.primary{background:var(--orange);border-color:var(--orange);color:#050505}
+main{padding:18px 12px 34px}
+.poster{max-width:1080px;margin:0 auto;background:#fff;border:2px solid #111;border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,.16);padding:20px}
+.poster-inner{border:1.5px solid #111;border-radius:8px;padding:18px}
+.hero{text-align:center;border-bottom:2px solid #111;padding:2px 12px 14px}
+.hero h1{margin:0;font-size:38px;line-height:1.03;letter-spacing:-.02em;font-weight:950}
+.hero p{margin:8px 0 0;font-size:18px}
+.top-grid{display:grid;grid-template-columns:1fr 1fr 1.15fr;border-bottom:2px solid #111}
+.panel{padding:16px}
+.panel+.panel{border-left:1px solid var(--line)}
+h2{margin:0 0 10px;font-size:21px;line-height:1.08}
+ul{margin:8px 0 0;padding-left:22px}
+li{margin:8px 0;font-size:15px;line-height:1.35}
+.product-row{display:grid;grid-template-columns:1fr 1fr .82fr;gap:8px;align-items:end;text-align:center}
+.product-row figure{margin:0}
+.product-row figcaption{font-size:12px;line-height:1.16;margin-top:4px}
+.icon{width:100%;height:auto;display:block}
+.steps-title{padding:15px 12px 10px;font-size:27px;font-weight:900}
+.step{display:grid;grid-template-columns:54px 1.05fr 1.45fr;gap:14px;align-items:center;padding:13px 12px;border-top:1px solid var(--line)}
+.step-no{width:46px;height:46px;border:2px solid #111;border-radius:50%;display:grid;place-items:center;font-size:27px;font-weight:900}
+.step-copy{font-size:15px;line-height:1.35}
+.visual{min-height:112px;display:flex;align-items:center;justify-content:center;gap:14px}
+.callout{border:2px solid #555;border-radius:10px;padding:9px 10px;font-weight:900;text-align:center;font-size:14px;line-height:1.13;background:#fafafa;min-width:118px}
+.swivel{display:flex;align-items:center;gap:8px;font-size:13px;line-height:1.2}
+.bottom-grid{display:grid;grid-template-columns:1.08fr 1fr .9fr;border-top:2px solid #111;margin-top:4px}
+.bottom-grid .panel{min-height:235px}
+.bottom-grid strong{font-size:14px}
+.storage-wrap{display:grid;grid-template-columns:1fr 94px;gap:10px;align-items:center}
+.disclaimer{font-size:14px;line-height:1.4}
+.small-note{font-size:11px;color:#555;text-align:center;margin-top:10px}
+svg text{font-family:Arial,Helvetica,sans-serif}
+@media(max-width:800px){
+  .hero h1{font-size:28px}.hero p{font-size:15px}
+  .top-grid,.bottom-grid{grid-template-columns:1fr}
+  .panel+.panel{border-left:0;border-top:1px solid var(--line)}
+  .step{grid-template-columns:46px 1fr}
+  .step .visual{grid-column:1/-1;border-top:1px dashed #ddd;padding-top:10px}
+}
+@media(max-width:560px){
+  .toolbar{align-items:flex-start}.toolbar .brand small{display:none}.btn{padding:0 9px;font-size:11px}
+  main{padding:8px 5px 22px}.poster{padding:7px;border-radius:6px}.poster-inner{padding:8px;border-radius:5px}
+  .hero h1{font-size:23px}.hero p{font-size:13px}.steps-title{font-size:22px}
+  h2{font-size:18px}.panel{padding:13px}.step-copy,li{font-size:14px}
+}
+@media print{
+  @page{size:A4 portrait;margin:5mm}
+  .toolbar,.small-note{display:none!important}
+  html,body{background:#fff}
+  main{padding:0}.poster{max-width:none;border:0;box-shadow:none;padding:0}.poster-inner{border:1px solid #111;padding:6mm}
+  .hero h1{font-size:25px}.hero p{font-size:12px}
+  .top-grid{grid-template-columns:1fr 1fr 1.15fr}.bottom-grid{grid-template-columns:1.08fr 1fr .9fr}
+  .panel{padding:8px}h2{font-size:14px}li,.step-copy,.disclaimer{font-size:9.5px}.steps-title{font-size:17px;padding:8px}
+  .step{grid-template-columns:34px 1.05fr 1.45fr;padding:5px 8px;gap:8px}.step-no{width:30px;height:30px;font-size:16px}
+  .visual{min-height:65px}.callout{font-size:9px;min-width:82px;padding:5px}
+}
 </style>
 </head>
 <body>
-<header class="top">
-  <div class="brand">X-LABS<small>RETATRUTIDE 20 MG RECONSTITUTION & HANDLING GUIDE</small></div>
+<header class="toolbar">
+  <div class="brand">X-LABS<small>RETATRUTIDE 20 MG RECONSTITUTION &amp; HANDLING GUIDE</small></div>
   <div class="actions">
     <button class="btn primary" type="button" onclick="window.print()">Print / Save PDF</button>
     <a class="btn" href="https://www.xlabs.ltd/">Back to X-Labs</a>
   </div>
 </header>
+
+<!-- Reusable vector artwork: text and line work stay sharp at any zoom level -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+<defs>
+  <linearGradient id="glass" x1="0" x2="1"><stop offset="0" stop-color="#fff"/><stop offset=".45" stop-color="#e7ebef"/><stop offset=".7" stop-color="#fff"/><stop offset="1" stop-color="#cfd5da"/></linearGradient>
+  <linearGradient id="metal" x1="0" x2="1"><stop offset="0" stop-color="#aaa"/><stop offset=".35" stop-color="#f8f8f8"/><stop offset=".7" stop-color="#bbb"/><stop offset="1" stop-color="#777"/></linearGradient>
+
+  <symbol id="retaVial" viewBox="0 0 120 170">
+    <ellipse cx="60" cy="22" rx="37" ry="9" fill="#075bd0"/><rect x="23" y="22" width="74" height="18" rx="4" fill="#1577ef"/>
+    <rect x="30" y="38" width="60" height="15" rx="3" fill="url(#metal)" stroke="#333"/>
+    <path d="M36 52h48l7 18v80q0 10-10 10H39q-10 0-10-10V70z" fill="url(#glass)" stroke="#555" stroke-width="2"/>
+    <rect x="35" y="86" width="50" height="44" rx="2" fill="#fff" stroke="#aaa"/>
+    <text x="60" y="101" text-anchor="middle" font-size="10" font-weight="900">X-LABS</text>
+    <rect x="39" y="106" width="42" height="14" rx="2" fill="#0568d8"/>
+    <text x="60" y="116" text-anchor="middle" fill="#fff" font-size="8" font-weight="900">RETATRUTIDE</text>
+    <text x="60" y="128" text-anchor="middle" font-size="9" font-weight="900">20 mg</text>
+    <text x="60" y="141" text-anchor="middle" font-size="6.6">Lyophilised</text><text x="60" y="149" text-anchor="middle" font-size="6.6">Peptide Powder</text>
+  </symbol>
+
+  <symbol id="bacVial" viewBox="0 0 120 170">
+    <ellipse cx="60" cy="22" rx="37" ry="9" fill="#888"/><rect x="23" y="22" width="74" height="18" rx="4" fill="#bbb"/>
+    <rect x="30" y="38" width="60" height="15" rx="3" fill="url(#metal)" stroke="#333"/>
+    <path d="M36 52h48l7 18v80q0 10-10 10H39q-10 0-10-10V70z" fill="url(#glass)" stroke="#555" stroke-width="2"/>
+    <rect x="35" y="84" width="50" height="49" rx="2" fill="#fff" stroke="#aaa"/>
+    <text x="60" y="99" text-anchor="middle" font-size="10" font-weight="900">X-LABS</text>
+    <rect x="39" y="104" width="42" height="20" rx="2" fill="#0568d8"/>
+    <text x="60" y="113" text-anchor="middle" fill="#fff" font-size="6.6" font-weight="900">BACTERIOSTATIC</text>
+    <text x="60" y="121" text-anchor="middle" fill="#fff" font-size="7.3" font-weight="900">WATER</text>
+    <text x="60" y="134" text-anchor="middle" font-size="10" font-weight="900">3 mL</text>
+  </symbol>
+
+  <symbol id="syringe" viewBox="0 0 430 100">
+    <rect x="3" y="34" width="64" height="32" rx="6" fill="#ff641c" stroke="#d44700" stroke-width="2"/>
+    <rect x="60" y="27" width="280" height="46" rx="5" fill="#f9fbfc" stroke="#888" stroke-width="2"/>
+    <rect x="334" y="22" width="14" height="56" rx="3" fill="#e8ecef" stroke="#aaa"/>
+    <rect x="347" y="34" width="49" height="32" fill="#fafafa" stroke="#aaa"/>
+    <rect x="394" y="20" width="13" height="60" rx="3" fill="#eee" stroke="#aaa"/>
+    <line x1="77" y1="29" x2="77" y2="48" stroke="#111" stroke-width="2"/><line x1="102" y1="29" x2="102" y2="48" stroke="#111" stroke-width="2"/>
+    <line x1="127" y1="29" x2="127" y2="48" stroke="#111" stroke-width="2"/><line x1="152" y1="29" x2="152" y2="48" stroke="#111" stroke-width="2"/>
+    <line x1="177" y1="29" x2="177" y2="48" stroke="#111" stroke-width="2"/><line x1="202" y1="29" x2="202" y2="48" stroke="#111" stroke-width="2"/>
+    <line x1="227" y1="29" x2="227" y2="48" stroke="#111" stroke-width="2"/><line x1="252" y1="29" x2="252" y2="48" stroke="#111" stroke-width="2"/>
+    <line x1="277" y1="29" x2="277" y2="48" stroke="#111" stroke-width="2"/><line x1="302" y1="29" x2="302" y2="48" stroke="#111" stroke-width="2"/>
+    <text x="77" y="65" font-size="10" text-anchor="middle">10</text><text x="102" y="65" font-size="10" text-anchor="middle">20</text><text x="127" y="65" font-size="10" text-anchor="middle">30</text>
+    <text x="152" y="65" font-size="10" text-anchor="middle">40</text><text x="177" y="65" font-size="10" text-anchor="middle">50</text><text x="202" y="65" font-size="10" text-anchor="middle">60</text>
+    <text x="227" y="65" font-size="10" text-anchor="middle">70</text><text x="252" y="65" font-size="10" text-anchor="middle">80</text><text x="277" y="65" font-size="10" text-anchor="middle">90</text>
+    <text x="306" y="65" font-size="10" font-weight="900" text-anchor="middle">100</text><text x="314" y="82" font-size="8" text-anchor="end">UNITS</text>
+  </symbol>
+
+  <symbol id="fridge" viewBox="0 0 120 200">
+    <rect x="19" y="5" width="82" height="190" rx="8" fill="url(#glass)" stroke="#555" stroke-width="2"/>
+    <line x1="19" y1="71" x2="101" y2="71" stroke="#555" stroke-width="2"/>
+    <rect x="29" y="25" width="5" height="33" rx="2" fill="#999"/><rect x="29" y="86" width="5" height="33" rx="2" fill="#999"/>
+    <g stroke="#111" stroke-width="2" transform="translate(60 126)"><line x1="-20" y1="0" x2="20" y2="0"/><line x1="0" y1="-20" x2="0" y2="20"/><line x1="-14" y1="-14" x2="14" y2="14"/><line x1="-14" y1="14" x2="14" y2="-14"/></g>
+  </symbol>
+</defs>
+</svg>
+
 <main>
-  <div class="sheet">
-    <img src="data:image/png;base64,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" alt="X-Labs Retatrutide 20 mg reconstitution and handling guide with vial and syringe illustrations">
-  </div>
+  <article class="poster">
+    <div class="poster-inner">
+      <section class="hero">
+        <h1>X-LABS RETATRUTIDE 20 MG VIALS<br>RECONSTITUTION &amp; HANDLING GUIDE</h1>
+        <p>Simple instructions for preparing one 20 mg vial using bacteriostatic water.</p>
+      </section>
+
+      <section class="top-grid">
+        <div class="panel">
+          <h2>1. Package contents</h2>
+          <ul>
+            <li>2 × 20 mg Retatrutide vials<br>(lyophilised peptide powder)</li>
+            <li>1 × 3 mL bacteriostatic water</li>
+            <li>5 × U-100 insulin syringes</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>2. Before you start</h2>
+          <ul>
+            <li>Wash and dry your hands thoroughly.</li>
+            <li>Work on a clean surface.</li>
+            <li>Use a new sterile syringe.</li>
+            <li>Do not use if seals are damaged.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <div class="product-row">
+            <figure><svg class="icon" viewBox="0 0 120 170"><use href="#retaVial"/></svg><figcaption>X-Labs Retatrutide<br><b>20 mg vial</b> (powder)</figcaption></figure>
+            <figure><svg class="icon" viewBox="0 0 120 170"><use href="#bacVial"/></svg><figcaption>Bacteriostatic water<br><b>3 mL</b></figcaption></figure>
+            <figure><svg class="icon" viewBox="0 0 430 100" style="transform:rotate(-90deg);margin:55px 0 45px"><use href="#syringe"/></svg><figcaption>U-100<br>insulin syringe</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <div class="steps-title">3. How to reconstitute ONE vial</div>
+
+      <section class="step">
+        <div class="step-no">1</div>
+        <div class="step-copy">Remove the small protective caps from the peptide vial and bacteriostatic water vial. Clean the rubber stoppers.</div>
+        <div class="visual">
+          <svg viewBox="0 0 120 170" style="width:86px"><use href="#retaVial"/></svg>
+          <svg viewBox="0 0 120 170" style="width:86px"><use href="#bacVial"/></svg>
+          <div class="swivel">
+            <svg viewBox="0 0 130 115" style="width:120px"><ellipse cx="60" cy="72" rx="37" ry="15" fill="#bbb" stroke="#555" stroke-width="2"/><ellipse cx="60" cy="66" rx="25" ry="9" fill="#555"/><rect x="72" y="11" width="46" height="58" rx="5" transform="rotate(24 95 40)" fill="#fff" stroke="#bbb"/></svg>
+            <span>Clean with an alcohol swab<br>(provided in kit).</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="step-no">2</div>
+        <div class="step-copy">Draw <b>1.00 mL (100 units)</b> of bacteriostatic water into a U-100 syringe.</div>
+        <div class="visual">
+          <svg viewBox="0 0 430 100" style="width:min(430px,76%)"><use href="#syringe"/></svg>
+          <div class="callout">Full U-100 syringe =<br>1.00 mL =<br>100 units</div>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="step-no">3</div>
+        <div class="step-copy">Tilt the peptide vial slightly. Insert the needle and slowly let the 1.00 mL run down the inside wall of the vial. Do not force it directly onto the powder.</div>
+        <div class="visual">
+          <div style="position:relative;width:390px;height:130px">
+            <svg viewBox="0 0 120 170" style="position:absolute;width:105px;left:65px;top:-18px;transform:rotate(-25deg)"><use href="#retaVial"/></svg>
+            <svg viewBox="0 0 430 100" style="position:absolute;width:300px;right:0;top:20px;transform:rotate(-14deg)"><use href="#syringe"/></svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="step-no">4</div>
+        <div class="step-copy">Draw a further <b>0.25 mL (25 units)</b> of bacteriostatic water into the syringe. Add it the same way while the vial remains slightly tilted.</div>
+        <div class="visual">
+          <svg viewBox="0 0 430 100" style="width:min(430px,76%)"><use href="#syringe"/></svg>
+          <div class="callout">Additional<br>25 units =<br>0.25 mL</div>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="step-no">5</div>
+        <div class="step-copy">Gently swivel the vial side to side until dissolved.<br><b>Do NOT shake.</b></div>
+        <div class="visual">
+          <span style="font-size:42px">↶</span>
+          <svg viewBox="0 0 120 170" style="width:92px"><use href="#retaVial"/></svg>
+          <span style="font-size:42px">↷</span>
+          <div style="font-size:14px;line-height:1.25">Swivel gently<br>until the powder<br>is fully dissolved.</div>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="step-no">6</div>
+        <div class="step-copy">The vial is now reconstituted with a total of <b>1.25 mL bacteriostatic water</b> and is ready for use as directed by a qualified medical practitioner.</div>
+        <div class="visual">
+          <svg viewBox="0 0 120 170" style="width:92px"><use href="#retaVial"/></svg>
+          <div style="font-size:15px;line-height:1.25">Reconstituted and<br>ready for use.</div>
+        </div>
+      </section>
+
+      <section class="bottom-grid">
+        <div class="panel">
+          <h2>4. Storage</h2>
+          <div class="storage-wrap">
+            <ul>
+              <li>Store the reconstituted vial in a refrigerator at 2–6 °C.</li>
+              <li>Keep the unreconstituted second vial and remaining bacteriostatic water in a safe, dry place until needed.</li>
+              <li>Protect from heat, light and contamination.</li>
+            </ul>
+            <svg viewBox="0 0 120 200" style="width:88px"><use href="#fridge"/></svg>
+          </div>
+        </div>
+        <div class="panel">
+          <h2>5. Important notes</h2>
+          <strong>ADMINISTER AS FOLLOWS:</strong>
+          <ul>
+            <li>Week 1 to 4 = 13 units per week</li>
+            <li>Week 5 to 7 = 25 units per week</li>
+            <li>Do not shake the vial – peptide compounds can be sensitive.</li>
+            <li>Use only as directed by your medical practitioner.</li>
+            <li>Administration amount and schedule must be determined by a qualified practitioner.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>6. Disclaimer</h2>
+          <p class="disclaimer">For research / specialist use only. This guide provides general handling and reconstitution information only and does not replace medical advice. Use is subject to practitioner guidance and applicable law.</p>
+        </div>
+      </section>
+    </div>
+  </article>
+  <p class="small-note">X-Labs professional handling reference • www.xlabs.ltd</p>
 </main>
 </body>
 </html>
