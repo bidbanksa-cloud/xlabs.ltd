@@ -36,6 +36,9 @@
     .notice h2{margin:0 0 6px;font-size:15px}
     .notice p{margin:0 0 8px;font-size:12.5px}
     .legal{font-weight:800;font-size:12px;letter-spacing:.02em}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+    .action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:2px solid #111;border-radius:8px;background:#111;color:#fff;text-decoration:none;font-weight:800;font-size:13px;cursor:pointer}
+    .action.alt{background:#fff;color:#111}
     .footer{margin-top:24px;padding-top:14px;border-top:2px solid #111;text-align:center;font-size:11px;font-weight:700;letter-spacing:.05em}
     .footer a{color:#111}
     @media (max-width:520px){
@@ -47,7 +50,7 @@
       .num{width:30px;height:30px}
     }
     @media print{
-      body{background:#fff}.page{max-width:none;padding:12mm;min-height:auto}.footer a{text-decoration:none}
+      body{background:#fff}.page{max-width:none;padding:12mm;min-height:auto}.actions{display:none}.footer a{text-decoration:none}
     }
   </style>
 </head>
@@ -115,6 +118,11 @@
         <li>Discard if damage, contamination, or a storage excursion is suspected. Follow the product-specific beyond-use date.</li>
       </ul>
     </section>
+
+    <div class="actions">
+      <button class="action" type="button" onclick="window.print()">Print / Save PDF</button>
+      <a class="action alt" href="https://www.xlabs.ltd/">Back to X-Labs</a>
+    </div>
 
     <section class="notice">
       <h2>CLINICAL SAFETY NOTICE</h2>
