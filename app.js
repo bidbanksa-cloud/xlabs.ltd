@@ -61,6 +61,13 @@
     var option = product.specialOptions.find(function (x) { return String(x.id) === String(optionId); });
     return option ? option.name : '';
   }
+
+  function guideFor(product) {
+    var guides = {
+      XL01: 'https://www.xlabs.ltd/g/reta20/'
+    };
+    return guides[codeFor(product)] || '';
+  }
   function showMessage(target, message, type) {
     if (!target) return;
     if (!message) { target.className = 'notice hidden'; target.textContent = ''; return; }
@@ -169,6 +176,8 @@
     var optionHtml = options.length ? '<label class="stack-form">Option<select id="modalOption">' +
       options.map(function (o) { return '<option value="' + esc(o.id) + '">' + esc(o.name) + ' — ' + money(o.price) + '</option>'; }).join('') +
       '</select></label>' : '';
+    var guideUrl = guideFor(p);
+    var guideHtml = guideUrl ? '<a class="secondary-button full" href="' + esc(guideUrl) + '" target="_blank" rel="noopener">Reconstitution &amp; User Guide</a>' : '';
     $('productModalContent').innerHTML =
       '<div class="product-modal-grid">' +
         '<div class="modal-image"><img src="' + esc(imgUrl(p.image)) + '" alt="' + esc(p.name) + '" onerror="this.src=\'./xlabs-logo-v2.jpg\'"></div>' +
@@ -185,6 +194,8 @@
             '<div><span>Supplier</span><strong>X-Labs</strong></div>' +
           '</div>' +
           (p.researchOnly ? '<p class="muted">For research use only. Refer to the live catalogue notice for this listing.</p>' : '') +
+          guideHtml +
+          (guideHtml ? '<div style="height:10px"></div>' : '') +
           '<button id="modalAddButton" class="primary-button full" type="button"' + (p.priceLocked || productPrice(p) <= 0 ? ' disabled' : '') + '>Add to Cart</button>' +
         '</div>' +
       '</div>';
