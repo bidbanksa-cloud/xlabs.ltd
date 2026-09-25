@@ -64,7 +64,8 @@
 
   function guideFor(product) {
     var guides = {
-      XL01: 'https://www.xlabs.ltd/g/reta20/'
+      XL01: 'https://www.xlabs.ltd/g/reta20/',
+      XL06: 'https://www.xlabs.ltd/g/tirz20/'
     };
     return guides[codeFor(product)] || '';
   }
