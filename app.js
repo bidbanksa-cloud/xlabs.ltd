@@ -63,11 +63,28 @@
   }
 
   function guideFor(product) {
-    var guides = {
+    var codeGuides = {
       XL01: 'https://www.xlabs.ltd/g/reta20/',
       XL06: 'https://www.xlabs.ltd/g/tirz20/'
     };
-    return guides[codeFor(product)] || '';
+    var codeGuide = codeGuides[codeFor(product)];
+    if (codeGuide) return codeGuide;
+
+    var text = (String(product.id || '') + ' ' + String(product.name || '')).toLowerCase();
+    var matches = [];
+    function addMatch(regex, url) {
+      if (regex.test(text) && matches.indexOf(url) < 0) matches.push(url);
+    }
+
+    addMatch(/\b(retatrutide|reta)\b/i, 'https://www.xlabs.ltd/g/reta20/');
+    addMatch(/\b(tirzepatide|tirz)\b/i, 'https://www.xlabs.ltd/g/tirz20/');
+    addMatch(/\bghk\s*[- ]?\s*cu\b/i, 'https://www.xlabs.ltd/g/ghkcu50/');
+    addMatch(/\bbpc\s*[- ]?\s*157\b|\bbpc\b/i, 'https://www.xlabs.ltd/g/bpc10/');
+    addMatch(/\bmots\s*[- ]?\s*c\b|\bmots\b/i, 'https://www.xlabs.ltd/g/mots10/');
+    addMatch(/\baod\s*[- ]?\s*9604\b|\baod\b/i, 'https://www.xlabs.ltd/g/aod10/');
+    addMatch(/\btesamorelin\b|\btesa\b/i, 'https://www.xlabs.ltd/g/tesa20/');
+
+    return matches.length === 1 ? matches[0] : '';
   }
   function showMessage(target, message, type) {
     if (!target) return;
