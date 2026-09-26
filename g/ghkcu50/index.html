@@ -33,8 +33,25 @@ main{padding:14px 8px 28px}
 </header>
 <main>
   <div class="guide-wrap">
-    <img class="guide" src="./ghk_cu_reconstitution_and_handling_guide.jpg?v=20260926-3" alt="X-Labs GHK-Cu 50 mg Reconstitution and Handling Guide">
+    <div id="loading" style="color:#111;text-align:center;padding:18px;font-weight:700">Loading approved GHK-Cu guide…</div><img id="guideImage" class="guide" alt="X-Labs GHK-Cu 50 mg Reconstitution and Handling Guide" style="display:none">
   </div>
 </main>
+<script>
+(async function(){
+  const parts=["00","01","02","03","04","05","06","07"];
+  try{
+    const chunks=await Promise.all(parts.map(p=>fetch("./b64/part"+p+".txt?v=20260926-4",{cache:"no-store"}).then(r=>{
+      if(!r.ok) throw new Error("Missing image part "+p);
+      return r.text();
+    })));
+    const img=document.getElementById("guideImage");
+    img.src="data:image/jpeg;base64,"+chunks.join("").trim();
+    img.onload=()=>{document.getElementById("loading").style.display="none";img.style.display="block";};
+    img.onerror=()=>{document.getElementById("loading").textContent="Guide image failed to load. Please refresh once.";};
+  }catch(e){
+    document.getElementById("loading").textContent="Guide image failed to load. Please refresh once.";
+  }
+})();
+</script>
 </body>
 </html>
