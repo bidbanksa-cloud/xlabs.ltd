@@ -393,7 +393,13 @@
       });
       var result = await api('/api/orders', {
         method: 'POST',
-        body: JSON.stringify({ customer: customer, items: items, notes: form.notes || '' })
+        body: JSON.stringify({
+          customer: customer,
+          items: items,
+          notes: form.notes || '',
+          salesChannel: 'xlabs',
+          deliveryOptionCode: 'COURIER_DOOR_R130'
+        })
       });
       if (!result.payfastReady || !result.paymentUrl) throw new Error('The order was received but secure PayFast checkout was not returned. Please contact X-Labs support before paying.');
       state.cart = []; saveCart();
