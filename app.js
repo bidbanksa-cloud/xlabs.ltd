@@ -120,7 +120,7 @@
       var response = await fetch(API + '/api/products?xlabs_store=' + Date.now(), { cache: 'no-store' });
       if (!response.ok) throw new Error('Live catalogue unavailable.');
       var payload = await response.json();
-      state.products = (payload.products || []).filter(isXlabs).filter(function (p) { return p.active !== false; });
+      state.products = (payload.products || []).filter(isXlabs).filter(function (p) { return p.active !== false && !p.promoOnly; });
       if (!state.products.length) throw new Error('No active X-Labs listings are available right now.');
       $('catalogueStatus').textContent = state.products.length + ' live X-Labs listings · current retail pricing';
       showMessage($('catalogueError'), '');
