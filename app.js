@@ -374,13 +374,14 @@
   async function placeOrder(event) {
     event.preventDefault();
     if (!state.cart.length) return;
+    var checkoutForm = event.currentTarget;
+    var form = Object.fromEntries(new FormData(checkoutForm).entries());
     var button = $('placeOrderButton');
     button.disabled = true; button.textContent = 'Preparing secure checkout…';
     try {
       var catalogueReady = await loadCatalogue();
       if (!catalogueReady) throw new Error('Could not refresh the live X-Labs catalogue. Your order has not been placed.');
       if (!state.cart.length) throw new Error('The items in your cart are no longer available at an active retail price.');
-      var form = Object.fromEntries(new FormData(event.currentTarget).entries());
       var customer = {
         name: (String(form.firstName || '').trim() + ' ' + String(form.surname || '').trim()).trim(),
         phone: form.phone, email: form.email, gender: form.gender,
