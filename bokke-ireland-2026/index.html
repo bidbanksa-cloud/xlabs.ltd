@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bokke v Ireland | Family Score Challenge</title>
-<meta name="description" content="A free family-and-friends Springboks vs Ireland score prediction challenge for 21 November 2026.">
+<title>Bokke v Ireland | Family, Friends & Business Colleagues Challenge</title>
+<meta name="description" content="A free Family, Friends & Business Colleagues Springboks vs Ireland score prediction challenge for 21 November 2026.">
 <style>
 :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f5f9f5;background:#071c17;font-synthesis:none}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 15% 0%,#20543e 0%,transparent 46%),radial-gradient(ellipse at 100% 15%,#3f401c 0%,transparent 34%),#071c17}button,input,textarea{font:inherit}
@@ -27,8 +27,8 @@ footer{font-size:12px;color:#a6c0b3;margin-top:25px;line-height:1.6}
 </style>
 </head>
 <body><div class="wrap">
-<div class="top"><div class="brand">THE FAMILY RUGBY CHALLENGE</div><div class="day">SATURDAY · 21 NOVEMBER 2026</div></div>
-<div class="hero"><div class="kicker">Springboks vs Ireland · Dublin</div><h1>GO <em>BOKKE!</em></h1><p class="sub">Back the Boks, back Ireland, or call a draw. Predict the final score, brag to the family, and see who gets closest.</p><div class="meta"><div class="chip">🏉 Kick-off <strong>18:40 SAST</strong></div><div class="chip">🎁 Leno's sponsored prize <strong>R500</strong></div><div class="chip">🎉 <strong>Free to enter</strong></div></div></div>
+<div class="top"><div class="brand">FAMILY, FRIENDS & BUSINESS COLLEAGUES CHALLENGE</div><div class="day">SATURDAY · 21 NOVEMBER 2026</div></div>
+<div class="hero"><div class="kicker">Springboks vs Ireland · Dublin</div><h1>GO <em>BOKKE!</em></h1><p class="sub">Back the Boks, back Ireland, or call a draw. Predict the final score, challenge your family, friends and business colleagues, and see who gets closest.</p><div class="meta"><div class="chip">🏉 Kick-off <strong>18:40 SAST</strong></div><div class="chip">🎁 Leno's sponsored prize <strong>R500</strong></div><div class="chip">🎉 <strong>Free to enter</strong></div></div></div>
 <div class="panel">
 <div class="grid">
 <div class="card"><div class="label">Leno's opening prediction</div><div class="huge"><span class="green">SA 31</span> <span class="muted">—</span> 19 IRE</div><div><strong>Springboks by 12!</strong> Think you can predict better?</div></div>
@@ -36,7 +36,7 @@ footer{font-size:12px;color:#a6c0b3;margin-top:25px;line-height:1.6}
 </div>
 <div class="tabs" role="tablist"><button class="tab active" id="entryButton" type="button" aria-selected="true">Make your prediction</button><button class="tab" id="deskButton" type="button" aria-selected="false">Captain's scoring desk</button></div>
 <section id="entryTab">
-<div id="openNotice" class="notice">Submit your prediction through WhatsApp before kick-off. Only WhatsApp messages actually sent to the organiser count as entries.</div>
+<div id="openNotice" class="notice">Submit your prediction via WhatsApp by 17:30 South African time. Only WhatsApp messages actually sent to the organiser count as entries.</div>
 <form id="entryForm">
 <div class="field"><label for="participant">Your name</label><input id="participant" maxlength="60" placeholder="e.g. Johan" autocomplete="name" required></div>
 <div class="scores">
@@ -47,11 +47,11 @@ footer{font-size:12px;color:#a6c0b3;margin-top:25px;line-height:1.6}
 <div class="status" id="entryStatus" role="status"></div></form>
 <hr class="divider">
 <h2>How to win</h2>
-<ol class="rules"><li>One <strong>free entry per person</strong>. No money wagered and no payments accepted.</li><li>Entries close at <strong>18:40 SAST, Saturday 21 November 2026</strong>. WhatsApp message time is the proof of entry.</li><li>Exact final score wins first. If nobody gets it exact, the closest score <strong>with the correct match outcome</strong> wins. If nobody predicts the correct outcome, closest score overall wins.</li><li>Closeness = total points off across both teams. Equal best predictions share the <strong>R500</strong> prize, split to the nearest cent.</li><li>The organiser records WhatsApp entries and confirms the final result. Only entries submitted before kick-off qualify.</li></ol>
+<ol class="rules"><li>One <strong>free entry per person</strong>. No money wagered and no payments accepted.</li><li>Entries close strictly at <strong>17:30 SAST, Saturday 21 November 2026</strong>, ahead of kick-off. WhatsApp message time is the proof of entry.</li><li>Exact final score wins first. If nobody gets it exact, the closest score <strong>with the correct match outcome</strong> wins. If nobody predicts the correct outcome, closest score overall wins.</li><li>Closeness = total points off across both teams. Equal best predictions share the <strong>R500</strong> prize, split to the nearest cent.</li><li>The organiser records WhatsApp entries and confirms the final result. Only entries received before 17:30 SAST qualify.</li></ol>
 </section>
 <section id="deskTab" hidden>
 <h2>Captain's scoring desk</h2><p class="muted">Record entries you received by WhatsApp, enter the actual full-time score, and calculate the winner. Entries and scores are saved <strong>only on this browser/device</strong>, not on a shared server. Export a backup before changing phones.</p>
-<div class="notice warning">This desk is an organiser's local record, not a live shared scoreboard. Leno's 31–19 prediction is preloaded; add everyone else's WhatsApp entries here.</div>
+<div class="notice warning">This desk is an organiser's local record, not a live shared scoreboard. Leno's 31–19 prediction is preloaded; add everyone else's WhatsApp entries received before 17:30 here.</div>
 <div class="field"><label for="pasteEntry">Paste a participant's WhatsApp message</label><textarea id="pasteEntry" placeholder="Name: Johan&#10;South Africa: 27&#10;Ireland: 24"></textarea></div>
 <div class="actions"><button class="action secondary" id="importButton" type="button">Import pasted entry</button></div>
 <hr class="divider">
@@ -75,7 +75,7 @@ footer{font-size:12px;color:#a6c0b3;margin-top:25px;line-height:1.6}
 (function(){
 'use strict';
 var KEY='bokke_ireland_family_2026_entries_v1', FINAL='bokke_ireland_family_2026_final_v1';
-var LOCK=Date.parse('2026-11-21T16:40:00Z');
+var LOCK=Date.parse('2026-11-21T15:30:00Z');
 var seed=[{name:'Leno',sa:31,ire:19}];
 function el(id){return document.getElementById(id)}
 function escapeHTML(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
@@ -85,15 +85,15 @@ function getEntries(){try{var stored=JSON.parse(localStorage.getItem(KEY));if(Ar
 function saveEntries(xs){localStorage.setItem(KEY,JSON.stringify(xs))}
 function status(id,message,ok){el(id).textContent=message;el(id).style.color=ok?'#21744a':'#a14032'}
 function readEntry(){var name=el('participant').value.trim(),sa=parseScore(el('predictSA').value),ire=parseScore(el('predictIRE').value);if(!name||name.length>60||sa===null||ire===null){status('entryStatus','Please enter your name and two whole-number scores (0–150).',false);return null}return {name:name.replace(/\|/g,'-'),sa:sa,ire:ire}}
-function buildMessage(e){return 'BOKS26 - FAMILY SCORE CHALLENGE\nName: '+e.name+'\nSouth Africa: '+e.sa+'\nIreland: '+e.ire+'\nPick: '+pick(e.sa,e.ire)+'\nFree entry - no stake\nMatch: 21 Nov 2026, 18:40 SAST'}
-function tick(){var closed=Date.now()>=LOCK;el('sendButton').disabled=closed;el('copyButton').disabled=closed;el('openNotice').textContent=closed?'Predictions have closed at kick-off (18:40 SAST). Organiser: use the scoring desk for entries already received.':'Submit your prediction through WhatsApp before 18:40 SAST. Only messages actually sent to the organiser count as entries.';el('openNotice').className=closed?'notice warning':'notice'}
+function buildMessage(e){return 'BOKS26 - FAMILY SCORE CHALLENGE\nName: '+e.name+'\nSouth Africa: '+e.sa+'\nIreland: '+e.ire+'\nPick: '+pick(e.sa,e.ire)+'\nFree entry - no stake\nDeadline: 21 Nov 2026, 17:30 SAST'}
+function tick(){var closed=Date.now()>=LOCK;el('sendButton').disabled=closed;el('copyButton').disabled=closed;el('openNotice').textContent=closed?'Predictions closed at 17:30 SAST. Organiser: use the scoring desk only for entries already received before the deadline.':'Submit your prediction through WhatsApp before 17:30 SAST. Only messages actually sent to the organiser count as entries.';el('openNotice').className=closed?'notice warning':'notice'}
 function updatePick(){var a=parseScore(el('predictSA').value),b=parseScore(el('predictIRE').value);el('pickLabel').textContent=a===null||b===null?'Enter both scores to see which side you are backing.':'Your pick: '+pick(a,b)+' '+a+'–'+b}
 function showTab(name){var desk=name==='desk';el('deskTab').hidden=!desk;el('entryTab').hidden=desk;el('deskButton').classList.toggle('active',desk);el('entryButton').classList.toggle('active',!desk);el('deskButton').setAttribute('aria-selected',String(desk));el('entryButton').setAttribute('aria-selected',String(!desk));if(desk)render()}
 el('deskButton').addEventListener('click',function(){showTab('desk')});
 el('entryButton').addEventListener('click',function(){showTab('entry')});
 el('predictSA').addEventListener('input',updatePick);el('predictIRE').addEventListener('input',updatePick);
 el('entryForm').addEventListener('submit',function(ev){ev.preventDefault();if(Date.now()>=LOCK){tick();return}var e=readEntry();if(!e)return;var url='https://wa.me/27643645535?text='+encodeURIComponent(buildMessage(e));window.open(url,'_blank','noopener,noreferrer');status('entryStatus','WhatsApp opened. Press SEND in WhatsApp to complete your entry. It is not submitted until you send it.',true)});
-el('copyButton').addEventListener('click',function(){if(Date.now()>=LOCK){tick();return}var e=readEntry();if(!e)return;var txt=buildMessage(e);if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){status('entryStatus','Prediction copied. Send it to the organiser before kick-off.',true)}).catch(function(){status('entryStatus','Could not copy automatically. Use WhatsApp instead.',false)})}else{status('entryStatus','Copy is unavailable in this browser. Use the WhatsApp button.',false)}});
+el('copyButton').addEventListener('click',function(){if(Date.now()>=LOCK){tick();return}var e=readEntry();if(!e)return;var txt=buildMessage(e);if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){status('entryStatus','Prediction copied. Send it to the organiser by 17:30 SAST.',true)}).catch(function(){status('entryStatus','Could not copy automatically. Use WhatsApp instead.',false)})}else{status('entryStatus','Copy is unavailable in this browser. Use the WhatsApp button.',false)}});
 function validEntry(name,sa,ire){name=String(name||'').trim();sa=parseScore(sa);ire=parseScore(ire);if(!name||name.length>60||sa===null||ire===null){status('deskStatus','Please supply a name and whole-number scores from 0 to 150.',false);return false}var xs=getEntries(),index=xs.findIndex(function(x){return x.name.toLowerCase()===name.toLowerCase()});if(index>=0){if(!confirm('Replace existing prediction for '+xs[index].name+'? Only the original pre-kickoff submission should count.'))return false;xs[index]={name:name,sa:sa,ire:ire}}else xs.push({name:name,sa:sa,ire:ire});saveEntries(xs);render();status('deskStatus','Saved '+name+' — SA '+sa+', Ireland '+ire+' on this device.',true);return true}
 el('addEntry').addEventListener('click',function(){if(validEntry(el('adminName').value,el('adminSA').value,el('adminIRE').value)){el('adminName').value='';el('adminSA').value='';el('adminIRE').value=''}});
 el('importButton').addEventListener('click',function(){var txt=el('pasteEntry').value;var n=txt.match(/(?:^|\n)\s*Name\s*:\s*(.+)/i),a=txt.match(/(?:^|\n)\s*South\s*Africa\s*:\s*(\d+)/i),b=txt.match(/(?:^|\n)\s*Ireland\s*:\s*(\d+)/i);if(!n||!a||!b){status('deskStatus','Could not read the entry. Paste the full WhatsApp message containing Name, South Africa and Ireland.',false);return}if(validEntry(n[1].trim(),a[1],b[1]))el('pasteEntry').value=''});
